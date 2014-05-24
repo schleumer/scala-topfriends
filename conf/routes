@@ -1,21 +1,15 @@
 # Routes
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
-
 # Home page
-GET     /                           controllers.Application.index
-GET		/status						controllers.User.status
+GET     /                           		controllers.Application.index
+GET		/status								controllers.User.status
 GET		/change-theme/:theme				controllers.Themes.change(theme: String)
-GET		/user/logout				controllers.User.logout
-
-
+GET		/user/logout						controllers.User.logout
 # Facebook
 GET		/topchat/comet/:cbFn				controllers.facebook.Topchat.comet(cbFn: String)
-POST		/topchat/generate/:cbFn				controllers.facebook.Topchat.generate(cbFn: String)
-
-GET		/templates/*file			controllers.Templates.view(file: String)
-
+POST	/topchat/generate/:cbFn				controllers.facebook.Topchat.generate(cbFn: String)
+GET		/templates/*file					controllers.Templates.view(file: String)
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/static/public", file)
-
-GET     /admin/metrics              com.kenshoo.play.metrics.MetricsController.metrics
+GET     /assets/*file               		controllers.Assets.at(path="/static/public", file)
+GET     /admin/metrics              		com.kenshoo.play.metrics.MetricsController.metrics
