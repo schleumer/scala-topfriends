@@ -1,0 +1,27 @@
+<div style="display:inline-block">
+	<a href="javascript:;" ng-show="type == 'link'" class="modal-trigger">{{label}}</a>
+	<button type="button" class="btn btn-info modal-trigger" ng-show="type == 'button'">{{label}}</button>
+	<div class="modal in" style="text-align:left">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Criar Conta</h4>
+				</div>
+				<div class="modal-body">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<i class="fa fa-info-circle"></i> Escolha por onde deseja criar para criar uma conta :D
+						</div>
+					</div>
+					<div>
+						<button class="btn btn-info btn-xl" data-ng-model="$parent" data-topfriends-facebook="data-topfriends-facebook" complete="hide()"><i class="fa fa-facebook-square"></i> Facebook</button>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

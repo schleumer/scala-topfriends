@@ -1,0 +1,14 @@
+@(threads: List[play.api.libs.json.JsObject])(implicit lollipop: Lollipop)
+
+<html style="background-color:white">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+@for(thread <- threads){ 
+	@(thread \ "participant" \ "name")
+}
+
+Hellow, mother fucking world
+</body>
+</html>

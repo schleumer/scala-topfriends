@@ -1,0 +1,47 @@
+  <div data-ng-init="init()"> 
+  <div>
+    <h1 data-ng-if="status" class="topchat-status text-center" style="padding: 60px">
+       <span>{{status}}</span> <img src="/assets/images/nyan-preload.gif" style="width: 60px;">
+    </h1>
+  </div>
+    <div ng-show="!status" style="margin-bottom:20px;" class="row">
+    <div style="margin-top:20px" class="col-md-9">
+      @*<button data-ng-class="settings.share ? 'active' : null" data-ng-click="settings.share = !settings.share" class="btn btn-default"><i data-ng-class="settings.share ? 'fa-check' : 'fa-times'" class="fa"></i> Compartilhar
+      </button>*@
+      <div style="float:left; margin-right: 4px;">
+        <select class="selectpicker" data-cool-select ng-model="settings.length" style="width:170px;">
+          <option value="top3">Top 3</option>
+          <option value="top5">Top 5</option>
+          <option value="top10" selected="selected">Top 10</option>
+          <option value="top15">Top 15</option>
+          <option value="top25">Top 25</option>
+        </select>
+      </div>
+      <div class="btn-group">
+        <button data-ng-class="settings.tag ? 'active' : null" data-ng-click="settings.tag = !settings.tag" class="btn btn-default"><i data-ng-class="settings.tag ? 'fa-check' : 'fa-times'" class="fa"></i> Marcar Amigos
+        </button>
+        <button title="Escolher amigos que serão marcados" sch-tooltip="sch-tooltip" sch-tooltip-placement="bottom" data-ng-if="settings.tag" class="btn btn-default"><i class="fa fa-cog"></i> 
+        </button>
+      </div>
+      <button data-ng-click="generate()" class="btn btn-default btn-info"><i class="fa fa-star"></i> Criar Top</button>
+    </div>
+    <div style="margin-top:20px" class="col-md-3">
+      <input type="text" placeholder="Buscar" ng-model="name_search" class="form-control"/>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div data-ng-if="!status" class="row">
+    <div data-ng-repeat="thread in threads | filter: { &quot;participant&quot; : { &quot;name&quot; : name_search } }:false" data-ng-click="thread.removed = !(thread.removed || false)" class="col-md-3 col-sm-4 col-xs-6">
+      <div data-ng-if="thread.removed" class="top-user-box-overlay">
+        <btn class="btn btn-default btn-xs">Desfazer</btn>
+      </div>
+      <div style="width:100%" data-ng-class="thread.removed ? 'blurred' : null" class="top-user-box">
+        <div class="row-fluid">
+          <div class="top-user-box-img col-xs-3"><img data-ng-src="{{'http://graph.facebook.com/' + thread.participant.id + '/picture'}}" class="top-user-box-img"/></div>
+          <div class="top-user-box-info col-xs-9"><span class="top-user-box-name">{{thread.participant.name}}</span><span class="top-user-box-count">{{pf(thread.message_count, ':i: mensagem', ':i: mensagens', '')}}</span></div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

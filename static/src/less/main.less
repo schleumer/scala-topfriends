@@ -1,0 +1,221 @@
+body{
+  min-width: 480px;
+}
+
+.ng-cloak {
+  display: block!important;
+}
+
+.hide-before-load{
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+body.ng-scope .hide-before-load{
+  opacity: 1!important;
+}
+
+body.ng-scope .hide-after-load{
+  display:none;
+}
+
+#navbar {
+  margin-top: 10px;
+}
+
+.logo-star {
+  color: @state-warning-bg
+}
+
+.logo-brand {
+  margin-left: 3px;
+}
+
+.desc-block {
+  min-height: 100px;
+}
+
+.app-box {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.app-auth-box {
+  margin-top: -20px;
+}
+
+/*.app-auth-box-holder {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  padding: 40px;
+  background-color: fade(@modal-backdrop-bg, 30%);
+  #gradient > .radial(@modal-backdrop-bg, fade(@modal-backdrop-bg, 20%));
+  border-radius: @panel-border-radius;
+}
+*/
+.app-block {
+  position: relative;
+  padding: 10px;
+}
+
+.app-block .app-uses{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: inline;
+  padding: .4em;
+  font-size: 80%;
+  font-weight: lighter;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0 0 .25em 0;
+  background-color: #4c66a4;
+  color: white;
+}
+
+.app-block .desc-footer {
+  height: 38px; // ???
+}
+
+// .app-block:before {
+//   content: '';
+//   position: absolute;
+//   top: -170px;
+//   right: -61px;
+//   border-radius: @panel-border-radius;
+//   #gradient.directional(fade(@panel-bg, 100%), fade(@panel-bg, 92%), 45deg);
+//   width: 250px;
+//   height: 400px;
+//   z-index: 2;
+//   clip: rect(170px, 190px, 376px, 0px);
+// }
+
+.app-block .holder {
+  z-index: 3;
+  position: relative;
+}
+
+.app-block:after {
+  font-family: 'FontAwesome';
+  content: '\f005';
+  font-size: 300px;
+  position: absolute;
+  display: block;
+  top: -140px;
+  right: -100px;
+  z-index: 1;
+  clip: rect(140px, 179px, 376px, 0px);
+  opacity: .1;
+}
+
+
+
+.user-profile-image {
+  margin-top: -28px;
+  margin-bottom: -26px;
+  margin-right: 4px;
+  height: 32px;
+}
+
+.blurred {
+  -ms-filter: blur(2px);
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  filter: blur(2px);
+}
+
+.ui-pnotify-icon .fa {
+  margin-top: 3px;
+}
+
+.top-user-box {
+  cursor: pointer;
+  .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+  box-shadow: 1px 1px 5px rgba(0,0,0,.6);
+  display: block;
+  margin-bottom: 15px;
+  padding: 15px 0px;
+  text-shadow: 1px 1px 1px black;
+  position: relative;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.top-user-box-overlay {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, .3);
+  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+  box-shadow: 1px 1px 5px rgba(0,0,0,.6); 
+  bottom: 15px;
+  top: 0px;
+  left: 15px;
+  right: 15px;
+}
+
+.top-user-box-overlay .btn {
+  width: 100px;
+  margin-left: -50px;
+  left: 50%;
+  position: absolute;
+  height: 22px;
+  top: 50%;
+  margin-top: -16px;
+}
+
+.top-user-box-count{
+  font-size:14px;
+}
+
+.top-user-box-name {
+  height: 25px;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 2px;
+}
+
+.slide-animation.ng-enter, .slide-animation.ng-leave {
+  transition: 0.2s cubic-bezier(0.420, 0.000, 1.000, 1.000) all;
+  position: relative;
+}
+
+.slide-animation.ng-enter {
+  left: 2%;
+  opacity: 0;
+}
+
+.slide-animation.ng-enter.ng-enter-active {
+  opacity: 1;
+  left: 0;
+}
+
+.slide-animation.ng-leave {
+  left: 0;
+  display: none;
+}
+
+.slide-animation.ng-leave.ng-leave-active {
+  left: -100%;
+}
+
+@import "vendor/selectize/selectize.bootstrap3";

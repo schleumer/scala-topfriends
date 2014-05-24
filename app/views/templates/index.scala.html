@@ -1,0 +1,62 @@
+<div data-ng-class="(user ? 'row' : 'row-fluid')" class="row-fluid app-box">
+  <div data-ng-if="!user" class="app-auth-box-holder">
+    <div class="row-fluid">
+      <div class="well col-sm-6 col-sm-offset-3 app-auth-box">
+        <div class="alert alert-info">
+          <i class="fa fa-heart"></i> Nós mudamos! E trazemos novidades :D
+        </div>
+        <h3>Antes de tudo você precisa <sch:account-creation type="link" label="criar uma conta"></sch:account-creation> ou <sch:account-login type="link"></sch:account-login></h3>
+        <br/>
+        <div style="padding-top:20px; text-align:right">
+          <sch:account-creation type="button" label="Criar Conta"></sch:account-creation>
+          <sch:account-login type="button" label="Entrar"></sch:account-login>
+        </div>
+        <div class="panel panel-default" style="margin-top:20px;">
+          <div class="panel-body">
+            <i class="fa fa-info-circle"></i> <b>Por que agora tem que criar conta :(?</b>
+            <br/ >
+            Na verdade você sempre precisou, só mudamos as palavras para mais gente poder entender e confiar em nosso aplicativo e serviços :P
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <div ng-if="user">
+    <div class="col-sm-4">
+      <div class="panel panel-default app-block">
+        <div class="holder">
+          <h3>Top Chat</h3>
+          <p class="desc-block">Faz um ranking com os amigos que você mais conversa pelo chat do Facebook.</p>
+          <div class="desc-footer"><a data-topfriends-facebook-authorize="read_mailbox" href="#!/facebook/topchat" class="btn btn-primary pull-right"><i class="fa fa-star"></i><span> Usar</span></a></div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="app-uses"><i class="fa fa-facebook-square"></i> Facebook</div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-default app-block">
+        <div class="holder">
+          <h3>Top Chat Mosaico</h3>
+          <p class="desc-block">Faz um dos ranking em forma de mosaico com os amigos que você mais conversa pelo chat do facebook.</p>
+          <div class="desc-footer"><a data-topfriends-facebook-authorize="read_mailbox" href="#!/topmosaic" class="btn btn-primary pull-right"><i class="fa fa-star"></i><span> Usar</span></a></div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="app-uses"><i class="fa fa-facebook-square"></i> Facebook</div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-default app-block">
+        <div class="holder">
+          <h3>Top Seguidores</h3>
+          <p class="desc-block">Faz um dos ranking em forma de mosaico com os amigos que você mais conversa pelo chat do facebook.</p>
+          <div class="desc-footer"><a data-topfriends-facebook-authorize="user_likes,read_stream,user_photos,friends_photos" href="#!/topfollowers" class="btn btn-primary pull-right"><i class="fa fa-star"></i><span> Usar</span></a>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="app-uses"><i class="fa fa-facebook-square"></i> Facebook</div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
